@@ -2,11 +2,16 @@
   "home.html": {
     "entry": "./src/module/home/home.js",
     "template": "./src/module/home/home.html",
-    "chunks": ["top","home"]
+    "chunks": ["top","home","bottom"]
   },
   "game.html": {
     "entry": "./src/module/game/game.js",
     "template": "./src/module/game/game.html",
-    "chunks": ["top","game"]
+    "chunks": ["top","game","bottom"]
+  },
+  "eliminate.html": {
+    "entry": "./src/module/eliminate/eliminate.js",
+    "template": "./src/module/eliminate/eliminate.html",
+    "chunks": ["top","eliminate","bottom"]
   }
 }
