@@ -5,25 +5,14 @@
         <Top :index="2"></Top>
       </div>
     </section>
-    <section class="section">
+    <section class="section is-medium body-image">
       <div class="container">
-        <div>
-          <button @click="startGame">开始游戏</button>
-          <div>
-            <span>combo：</span>
-            <span>{{combo}}</span>
-          </div>
-          <div>
-            <span>当前得分：</span>
-            <span>{{score}}</span>
-          </div>
-          <span>{{time}}</span>
-          <progress class="progress is-primary" v-bind:value="timeProgress" max="100" style="max-width: 400px"></progress>
-        </div>
-        <div class="board">
-          <div v-for="(row,index) in showMaps" class="row">
-            <div v-for="cell in row" class="cell" @click="mouseClick(cell)"
-                 v-bind:class="{
+        <div class="columns">
+          <div class="column is-5 is-offset-1">
+            <div class="board">
+              <div v-for="(row,index) in showMaps" class="row">
+                <div v-for="cell in row" class="cell" @click="mouseClick(cell)"
+                     v-bind:class="{
                               'cell-r':cell.color==='R',
                               'cell-b':cell.color==='B',
                               'cell-g':cell.color==='G',
@@ -34,7 +23,23 @@
                               'cell-right':isMoveRight(cell),
                               'cell-click':cell.click
                            }">
+                </div>
+              </div>
             </div>
+            <progress class="progress is-warning" v-bind:value="timeProgress" max="100"
+                      style="max-width: 480px"></progress>
+          </div>
+          <div class="column is-6">
+            <button @click="startGame">开始游戏</button>
+            <div>
+              <span>combo：</span>
+              <span>{{combo}}</span>
+            </div>
+            <div>
+              <span>当前得分：</span>
+              <span>{{score}}</span>
+            </div>
+            <span>{{time}}</span>
           </div>
         </div>
       </div>
@@ -551,16 +556,21 @@
 </script>
 
 <style scoped>
+
+  .body-image {
+    background: url('../../assets/img/eliminate/background.jpg') left no-repeat;
+  }
+
   .board {
     display: flex;
-    outline: solid 4px gold;
+    outline: solid 2px gold;
     margin: 4px;
-    max-width: 400px;
+    max-width: 480px;
   }
 
   .cell {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     border: solid 2px gold;
     user-select: none;
