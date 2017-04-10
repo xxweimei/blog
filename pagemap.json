@@ -1,0 +1,6 @@
+{
+  "home.html": {
+    "entry": "./src/module/home/home.js",
+    "template": "./src/module/home/home.html"
+  }
+}

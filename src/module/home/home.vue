@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <div>
     <section class="hero is-primary is-large header-image">
       <div class="hero-head">
         <header class="nav">
           <div class="container">
             <div class="nav-left">
-              <a class="nav-item" href="../index.html">
+              <a class="nav-item" href="index.html">
                 xxweimei blog
               </a>
             </div>
@@ -88,7 +88,7 @@
 
 <script>
   export default {
-    name: 'app',
+    name: 'home',
     components: {},
     computed: {
       welcomeMsg(){
@@ -107,7 +107,7 @@
 
 <style>
   .header-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.60)), url('assets/images/background.jpg')
+    background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.60)), url('../../assets/img/background.jpg')
   }
   .section.main {
     background-color:#F0F0F0;

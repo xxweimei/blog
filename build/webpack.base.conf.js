@@ -1,16 +1,20 @@
 var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
+var pageMap = require('../pagemap')
 var vueLoaderConfig = require('./vue-loader.conf')
+var entries = {}
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
-
+for (let key in pageMap) {
+  let name = pageMap[key].entry.match(/(.*)\.js/)[1]
+  name = name.lastIndexOf('/') > -1 ? name.slice(name.lastIndexOf('/') + 1) : name
+  entries[name] = pageMap[key].entry
+}
 module.exports = {
-  entry: {
-    app: './src/main.js'
-  },
+  entry: entries,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
