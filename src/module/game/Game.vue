@@ -20,7 +20,7 @@
               </figure>
             </div>
             <div class="card-content has-text-right">
-              <p><a class="button is-info">Play</a></p>
+              <p><a class="button is-info" href="eliminate.html">Play</a></p>
             </div>
           </div>
         </div>
