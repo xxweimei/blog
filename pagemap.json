@@ -1,6 +1,12 @@
 {
   "home.html": {
     "entry": "./src/module/home/home.js",
-    "template": "./src/module/home/home.html"
+    "template": "./src/module/home/home.html",
+    "chunks": ["top","home"]
+  },
+  "game.html": {
+    "entry": "./src/module/game/game.js",
+    "template": "./src/module/game/game.html",
+    "chunks": ["top","game"]
   }
 }

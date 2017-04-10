@@ -8,12 +8,12 @@
           </a>
         </div>
         <div class="nav-right nav-menu">
-          <a class="nav-item is-active">Home</a>
-          <a class="nav-item">Blog</a>
-          <a class="nav-item">Game</a>
-          <a class="nav-item">Github</a>
-          <a class="nav-item">About</a>
-          <a class="nav-item">Donate</a>
+          <a class="nav-item" v-bind:class="{'is-active':index===0}" href="home.html">Home</a>
+          <a class="nav-item" v-bind:class="{'is-active':index===1}" href="">Blog</a>
+          <a class="nav-item" v-bind:class="{'is-active':index===2}" href="game.html">Game</a>
+          <a class="nav-item" v-bind:class="{'is-active':index===3}" href="">Github</a>
+          <a class="nav-item" v-bind:class="{'is-active':index===4}" href="">About</a>
+          <a class="nav-item" v-bind:class="{'is-active':index===5}" href="">Donate</a>
         </div>
       </div>
     </header>
@@ -22,6 +22,12 @@
 
 <script>
   export default {
-    name: 'topheader'
+    name: 'top',
+    props: {
+      index: {
+        type: Number,
+        default: 0
+      }
+    },
   }
 </script>

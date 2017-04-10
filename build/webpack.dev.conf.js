@@ -33,7 +33,8 @@ for (let key in pageMap) {
   localconfig.plugins.push(new HtmlWebpackPlugin({
     filename: key,
     template: pageMap[key].template,
-    inject: true
+    inject: true,
+    chunks: pageMap[key].chunks
   }))
 }
 

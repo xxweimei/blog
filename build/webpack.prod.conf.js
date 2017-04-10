@@ -74,6 +74,7 @@ for (let key in pageMap) {
     filename: key,
     template: pageMap[key].template,
     inject: true,
+    chunks: pageMap[key].chunks,
     minify: {
       removeComments: true,
       collapseWhitespace: true,

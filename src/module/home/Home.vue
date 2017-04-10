@@ -2,29 +2,14 @@
   <div>
     <section class="hero is-primary is-large header-image">
       <div class="hero-head">
-        <header class="nav">
-          <div class="container">
-            <div class="nav-left">
-              <a class="nav-item" href="index.html">
-                xxweimei blog
-              </a>
-            </div>
-            <div class="nav-right nav-menu">
-              <a class="nav-item is-active">Home</a>
-              <a class="nav-item">Blog</a>
-              <a class="nav-item">Game</a>
-              <a class="nav-item">Github</a>
-              <a class="nav-item">About</a>
-              <a class="nav-item">Donate</a>
-            </div>
-          </div>
-        </header>
+        <Top></Top>
       </div>
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title is-2">
             Welcome to a fantastic place
           </h1>
+          <br>
           <h2 class="subtitle is-5">
             {{welcomeMsg}}
           </h2>
@@ -36,39 +21,27 @@
         <div class="columns">
           <div class="column is-4">
             <div class="panel section has-text-centered">
-              <p><i class="fa fa-linux"></i></p>
-              <br>
-              <p>DevOps</p>
-              <br>
-              <p>shell python</p>
-              <p>gitlab docker rancher</p>
-              <p>and so on</p>
+              <p class="icon is-large"><i class="fa fa-bookmark-o"></i></p>
+              <p class="title is-2">Latest</p>
+              <p>rancher and gitlab devops</p>
               <br>
               <p><a class="button is-info">More</a></p>
             </div>
           </div>
           <div class="column is-4">
             <div class="panel section has-text-centered">
-              <p><i class="fa fa-github"></i></p>
-              <br>
-              <p>前端</p>
-              <br>
-              <p>HTML5 CSS3 JavaScript Android</p>
-              <p>JQuery Vue Angular Bootstrap Bulma</p>
-              <p>and so on</p>
+              <p class="icon is-large"><i class="fa fa-fire"></i></p>
+              <p class="title is-2">Hottest</p>
+              <p>rancher and gitlab devops</p>
               <br>
               <p><a class="button is-info">More</a></p>
             </div>
           </div>
           <div class="column is-4">
             <div class="panel section has-text-centered">
-              <p><i class="fa fa-chrome"></i></p>
-              <br>
-              <p>后端</p>
-              <br>
-              <p>Java Scala</p>
-              <p>springmvc springboot maven gradle</p>
-              <p>and so on</p>
+              <p class="icon is-large"><i class="fa fa-thumbs-o-up"></i></p>
+              <p class="title is-2">Recommend</p>
+              <p>rancher and gitlab devops</p>
               <br>
               <p><a class="button is-info">More</a></p>
             </div>
@@ -76,20 +49,16 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="content has-text-centered">
-          <p>Copyright © 2017 xxweimei</p>
-        </div>
-      </div>
-    </footer>
+    <Bottom></Bottom>
   </div>
 </template>
 
 <script>
+  import Top from '../../components/Top'
+  import Bottom from '../../components/Bottom'
   export default {
     name: 'home',
-    components: {},
+    components: {Top, Bottom},
     computed: {
       welcomeMsg(){
         let hour = new Date().getHours()
@@ -109,7 +78,8 @@
   .header-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.60)), url('../../assets/img/background.jpg')
   }
+
   .section.main {
-    background-color:#F0F0F0;
+    background-color: #F0F0F0;
   }
 </style>
