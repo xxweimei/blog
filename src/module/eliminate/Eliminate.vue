@@ -26,20 +26,15 @@
                 </div>
               </div>
             </div>
+            <br>
             <progress class="progress is-warning" v-bind:value="timeProgress" max="100"
                       style="max-width: 480px"></progress>
           </div>
           <div class="column is-6">
-            <button @click="startGame">开始游戏</button>
-            <div>
-              <span>combo：</span>
-              <span>{{combo}}</span>
-            </div>
-            <div>
-              <span>当前得分：</span>
-              <span>{{score}}</span>
-            </div>
-            <span>{{time}}</span>
+            <a class="button is-warning" @click="startGame">开始游戏</a>
+            <span class="tag is-warning">combo：{{combo}}</span>
+            <span class="tag is-warning">当前得分：{{score}}</span>
+            <span class="tag is-warning">{{time}}</span>
           </div>
         </div>
       </div>
