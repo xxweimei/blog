@@ -1,0 +1,70 @@
+<krpano>
+	
+	<action name="skin_addthumbs">
+		<!-- 添加场景显示区 -->
+		if(!device.desktop, mul(mulOffset, 82, scene.count); set(layer[thumbListLayer].height, 80), mul(mulOffset, 116, scene.count);set(layer[thumbListLayer].height, 100));
+		set(layer[thumbListLayer].width, get(mulOffset));
+		div(mulOffset, 2);
+
+		for(set(i,0), i LT scene.count, inc(i),
+			txtadd(thumbname,'skin_thumb_',get(i));
+			addlayer(get(thumbname));
+			copy(layer[get(thumbname)].url, scene[get(i)].thumburl);
+			set(layer[get(thumbname)].keep, true);
+			set(layer[get(thumbname)].parent, 'thumbListLayer');
+			set(layer[get(thumbname)].align, centertop);
+			set(layer[get(thumbname)].crop, '0|40|120|120');
+			set(layer[get(thumbname)].width, 120);
+			set(layer[get(thumbname)].height, 120);
+
+			txtadd(tooltipname, 'tooltip_', get(thumbname));
+			addplugin(get(tooltipname));
+			txtadd(plugin[get(tooltipname)].parent, 'layer[', get(thumbname), ']');
+			set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf');
+			set(plugin[get(tooltipname)].align,centertop);
+			set(plugin[get(tooltipname)].edge, bottom);
+			set(plugin[get(tooltipname)].autowidth,true);
+			set(plugin[get(tooltipname)].autoheight,true);
+			set(plugin[get(tooltipname)].roundedge,5);
+			set(plugin[get(tooltipname)].backgroundalpha,0);
+			set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF; font-family:黑体; font-size:12px;');
+			copy(plugin[get(tooltipname)].html, scene[get(i)].name);
+			set(plugin[get(tooltipname)].enabled,false);
+			set(plugin[get(tooltipname)].keep, true);
+
+			if(!device.desktop,
+				set(layer[get(thumbname)].scale,0.6);
+				mul(thumbx, i, 82);
+				add(thumbx, 41);
+				sub(thumbx, mulOffset);
+				,
+				set(layer[get(thumbname)].scale, 0.8);
+				mul(thumbx, i, 116);
+				add(thumbx, 58);
+				sub(thumbx, mulOffset);
+			);
+
+			copy(layer[get(thumbname)].x, thumbx);
+			copy(layer[get(thumbname)].y, 10);
+			add(scene[get(i)].thumbx, thumbx, thumbxcenter);
+			copy(scene[get(i)].thumby, 10);
+			set(layer[get(thumbname)].linkedscene, get(scene[get(i)].name));
+			set(layer[get(thumbname)].onclick, thumb_click());
+		);
+
+	</action>
+
+	<action name="thumb_click">
+		loadscene(get(linkedscene), null, MERGE, OPENBLEND(0.5, 0.0, 0.75, 0.05, linear));
+	</action>
+
+	<action name="showthumbs">
+		set(layer[thumbListLayer].visible, true);
+		tween(layer[thumbListLayer].y, 80, .3, default);
+	</action>
+
+	<action name="hidethumbs">
+		tween(layer[thumbListLayer].y,-200,.3,default,set(layer[thumbListLayer].visible,false));
+	</action>
+
+</krpano>
