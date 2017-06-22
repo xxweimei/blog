@@ -18,5 +18,10 @@
     "entry": "./src/module/eliminate/eliminate.js",
     "template": "./src/module/eliminate/eliminate.html",
     "chunks": ["top","eliminate","bottom"]
+  },
+  "marble.html": {
+    "entry": "./src/module/marble/marble.js",
+    "template": "./src/module/marble/marble.html",
+    "chunks": ["top","marble","bottom"]
   }
 }
