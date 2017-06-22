@@ -70,7 +70,6 @@ var webpackConfig = merge(baseWebpackConfig, {
 })
 
 for (let key in pageMap) {
-  pageMap[key].chunks = pageMap[key].chunks.push('manifest')
   webpackConfig.plugins.push(new HtmlWebpackPlugin({
     filename: key,
     template: pageMap[key].template,

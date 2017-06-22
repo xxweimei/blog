@@ -2,26 +2,56 @@
   "home.html": {
     "entry": "./src/module/home/home.js",
     "template": "./src/module/home/home.html",
-    "chunks": ["top","home","bottom"]
+    "chunks": [
+      "manifest",
+      "vendor",
+      "top",
+      "home",
+      "bottom"
+    ]
   },
   "index.html": {
     "entry": "./src/module/home/home.js",
     "template": "./src/module/home/home.html",
-    "chunks": ["top","home","bottom"]
+    "chunks": [
+      "manifest",
+      "vendor",
+      "top",
+      "home",
+      "bottom"
+    ]
   },
   "game.html": {
     "entry": "./src/module/game/game.js",
     "template": "./src/module/game/game.html",
-    "chunks": ["top","game","bottom"]
+    "chunks": [
+      "manifest",
+      "vendor",
+      "top",
+      "game",
+      "bottom"
+    ]
   },
   "eliminate.html": {
     "entry": "./src/module/eliminate/eliminate.js",
     "template": "./src/module/eliminate/eliminate.html",
-    "chunks": ["top","eliminate","bottom"]
+    "chunks": [
+      "manifest",
+      "vendor",
+      "top",
+      "eliminate",
+      "bottom"
+    ]
   },
   "marble.html": {
     "entry": "./src/module/marble/marble.js",
     "template": "./src/module/marble/marble.html",
-    "chunks": ["top","marble","bottom"]
+    "chunks": [
+      "manifest",
+      "vendor",
+      "top",
+      "marble",
+      "bottom"
+    ]
   }
 }
